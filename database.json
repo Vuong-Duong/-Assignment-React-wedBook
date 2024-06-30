@@ -1,0 +1,135 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "categoryId": 1,
+      "price": 25.5,
+      "image": "https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Ftokhaiyte.vn%2Fdune-xu-cat-pdf%2F&psig=AOvVaw3PXCzB-53sWvZbb3Jb4LFK&ust=1719017268482000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOizwsC864YDFQAAAAAdAAAAABAE"
+    },
+    {
+      "id": 2,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "categoryId": 2,
+      "price": 15.75,
+      "image": "https://easyeducation.vn/tai-lieu/tieng-anh-giao-tiep/to-kill-a-mockingbird-giet-con-chim-nhai/"
+    },
+    {
+      "id": 3,
+      "title": "1984",
+      "author": "George Orwell",
+      "categoryId": 1,
+      "price": 20,
+      "image": "https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Fspiderum.com%2Fbai-dang%2F1984-cua-Orwell-Cam-nang-6-buoc-cai-tri-danh-cho-cac-nha-doc-tai-p22SUUmOdDAU&psig=AOvVaw0j8bnod1weWkdONSe1UwHY&ust=1719017477188000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCODwyKK964YDFQAAAAAdAAAAABAE"
+    },
+    {
+      "id": 4,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "categoryId": 2,
+      "price": 18.25,
+      "image": "https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Fwww.fahasa.com%2Fthe-great-gatsby-154867.html&psig=AOvVaw0KRtW7jGmJ6BO9znxHMqtG&ust=1719017501458000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMiT-7i964YDFQAAAAAdAAAAABAE"
+    },
+    {
+      "id": 5,
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "author": "J.K. Rowling",
+      "categoryId": 3,
+      "price": 22.99,
+      "image": "https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Fwww.fahasa.com%2Fharry-potter-and-the-sorcerer-s-stone-paperback.html&psig=AOvVaw0ocHfwKmfsy6JMCEl8z3xI&ust=1719017546591000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJiy1cO964YDFQAAAAAdAAAAABAE"
+    },
+    {
+      "id": 6,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "categoryId": 2,
+      "price": 17.99,
+      "image": "https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Fwww.fahasa.com%2Fthe-catcher-in-the-rye-47570.html&psig=AOvVaw0Kh4d6WWxJBKr6lbwkHFMa&ust=1719017592377000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPCxkO6964YDFQAAAAAdAAAAABAE"
+    },
+    {
+      "id": 7,
+      "title": "The Hobbit",
+      "author": "J.K. Rowling",
+      "categoryId": 3,
+      "price": 21.5,
+      "image": "https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Fvi.wikipedia.org%2Fwiki%2FAnh_ch%25C3%25A0ng_Hobbit&psig=AOvVaw0xJytUKyu5Yisws_axeTZ_&ust=1719017657246000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLi2vPi964YDFQAAAAAdAAAAABAE"
+    },
+    {
+      "id": 8,
+      "title": "Brave New World",
+      "author": "George Orwell",
+      "categoryId": 1,
+      "price": 19.5,
+      "image": "https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Fvnu.ulis%2Fposts%2Fgi%25E1%25BB%259Bi-thi%25E1%25BB%2587u-s%25C3%25A1ch-brave-new-world-ng%25C6%25B0%25E1%25BB%259Di-vi%25E1%25BA%25BFt-gi%25E1%25BB%259Bi-thi%25E1%25BB%2587u-nguy%25E1%25BB%2585n-cao-h%25E1%25BA%25A3i-nam-khoa-sp%2F2214754438611673%2F&psig=AOvVaw0Uqij5EvKoRu3nHosX4GCm&ust=1719017697217000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKiowYu-64YDFQAAAAAdAAAAABAE"
+    },
+    {
+      "id": 9,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "categoryId": 2,
+      "price": 16.5,     
+      "image": "https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Fm.facebook.com%2Fvnu.ulis%2Fphotos%2Fa.1000057230081406%2F2213494635404320%2F%3Ftype%3D3&psig=AOvVaw3pHchKRzdezff5gW_XRSOb&ust=1719017719151000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNj67am-64YDFQAAAAAdAAAAABAE"
+    },
+    {
+      "id": 10,
+      "title": "The Lord of the Rings",
+      "author": "J.K. Rowling",
+      "categoryId": 3,
+      "price": 29.99,
+      "image": "https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Ftiki.vn%2Ftieu-thuyet-fantasy-tieng-anh-the-lord-of-the-rings-single-volume-edition-p263450658.html%3Fspid%3D263450661&psig=AOvVaw1dia9d-3Mh6dqz5bLlJOtj&ust=1719017781510000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICN_7e-64YDFQAAAAAdAAAAABAE"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Science Fiction"
+    },
+    {
+      "id": 2,
+      "name": "Classic Literature"
+    },
+    {
+      "id": 3,
+      "name": "Fantasy"
+    }
+  ],
+  "carousel": [
+    {
+      "id": 1,
+      "image": "https://www.google.com.vn/url?sa=i&url=https%3A%2F%2Ftokhaiyte.vn%2Fdune-xu-cat-pdf%2F&psig=AOvVaw3PXCzB-53sWvZbb3Jb4LFK&ust=1719017268482000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOizwsC864YDFQAAAAAdAAAAABAE",
+      "title": "Welcome to Our Bookstore",
+      "description": "Discover a wide range of books across all genres."
+    },
+    {
+      "id": 2,
+      "image": "https://www.example.com/carousel2.jpg",
+      "title": "Summer Reading",
+      "description": "Check out our special summer reading collection."
+    },
+    {
+      "id": 3,
+      "image": "https://www.example.com/carousel3.jpg",
+      "title": "New Arrivals",
+      "description": "Browse the latest additions to our catalog."
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "user1",
+      "password": "password1"
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "password2"
+    },
+    {
+      "id": 3,
+      "username": "user3",
+      "password": "password3"
+    }
+  ]
+}
