@@ -84,15 +84,18 @@
   "categories": [
     {
       "id": 1,
-      "name": "Science Fiction"
+      "name": "Science Fiction",
+      "imageC":"https://assets-global.website-files.com/5e3b2de5edfed777769f93a9/63fec4ccef07b2998ff26a9b_2.jpg"
     },
     {
       "id": 2,
-      "name": "Classic Literature"
+      "name": "Classic Literature",
+      "imageC":"https://myreadingvintage.com/cdn/shop/articles/stack_of_vintage_reading_books_in_a_room_1570x.png"
     },
     {
       "id": 3,
-      "name": "Fantasy"
+      "name": "Fantasy",
+      "imageC":"https://i.etsystatic.com/39582183/r/il/45396c/4881629201/il_570xN.4881629201_oksp.jpg"
     }
   ],
   "carousel": [
