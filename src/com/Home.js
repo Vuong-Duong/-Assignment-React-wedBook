@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Nav, Container } from 'react-bootstrap';
+import '../css/Body.css';
 
 export default function Home() {
     const [books, setBooks] = useState([]);
@@ -29,20 +30,31 @@ export default function Home() {
     }, []);
 
     return (
-        <Carousel>
-            {carousel.map(item => (
-                <Carousel.Item key={item.id}>
-                    <img
-                        className="d-block w-100"
-                        src={item.image}
-                        alt={item.title}
-                    />
-                    <Carousel.Caption>
-                        <h3>{item.title}</h3>
-                        <p>{item.description}</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            ))}
-        </Carousel>
+        <Container>
+            <Carousel>
+                {carousel.map(item => (
+                    <Carousel.Item key={item.id}>
+                        <img
+                            className="carousel-image"
+                            src={item.image}
+                            alt={item.title}
+                        />
+                        <Carousel.Caption>
+                            <h3>{item.title}</h3>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                ))}
+            </Carousel>
+
+            <Nav className="justify-content-center mt-5"> 
+                {categories.map((c) => (
+                    <Nav.Item key={c.id}>
+                        <Nav.Link href={`category?categoryId=${c.id}`}>
+                            <h5 className='text-dark'>{c.name}</h5>
+                        </Nav.Link>
+                    </Nav.Item>
+                ))}
+            </Nav>
+        </Container>
     );
 }
