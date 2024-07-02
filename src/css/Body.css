@@ -5,65 +5,61 @@
     object-fit: cover; 
 }
 .category-row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .category-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .category-info p {
-    margin-right: 10px;
-  }
-  
-  .book-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .book-list li {
-    margin: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-  .book-carousel {
-    display: flex;
-    overflow-x: auto;
-    padding: 20px;
-  }
-  
-  .book-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    width: 250px; /* adjust the width to fit your design */
-  }
-  
-  .book-card img {
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .book-info {
-    padding: 10px;
-  }
-  
-  .book-info h4 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  
-  
+.category-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.category-info p {
+  margin-right: 10px;
+}
+
+.book-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.book-list li {
+  margin: 10px;
+}
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.book-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.book-info {
+  padding: 10px;
+}
+
+.book-info h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}

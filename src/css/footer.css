@@ -1,13 +1,13 @@
-/* .text-light {
+.text-light {
     color: white; 
 } */
 
-/* .bg-dark {
+.bg-dark {
     background-color: #343a40; 
-} */
+}
 
-/* .fixed-bottom {
+ .fixed-bottom {
     position: fixed;
     bottom: 0;
     width: 100%;
-} */
+ }

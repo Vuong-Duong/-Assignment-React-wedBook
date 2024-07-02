@@ -56,49 +56,42 @@ export default function Home() {
                 ))}
             </Nav>
 
-
             <section className="products">
-
                 <div className="electronic-products">
                     <div className="category-container">
                         {categories.map((category) => (
                             <div className="category-row" key={category.id}>
-                                <div className="category-info">
+                                <div className="d-flex category-info ">
                                     <p className="card-title-c" style={{ fontSize: 24, fontWeight: 700 }}>
                                         {category.name}
                                     </p>
-                                    <img src={category.imageC} alt={category.name} style={{ width: 100, height: 100, borderRadius: 10 }} />
+                                    <button className="btn btn-primary card-btn mt-4" style={{ backgroundColor: '#337ab7', color: '#fff', padding: 10, borderRadius: 5 }}>
+                                    View All >>
+                                    </button>
                                 </div>
-                                <button className="btn btn-primary card-btn mt-4" style={{ backgroundColor: '#337ab7', color: '#fff', padding: 10, borderRadius: 5 }}>
-                                    View All
-                                </button>
-                                <div className="swiper-button-next">
-                                    <div className="next-icon">
-                                        <i className="fa-solid fa-chevron-right fa-xl"></i>
-                                    </div>
-                                </div>
-                                <div className="book-carousel">
-                                    {books.filter((book) => book.categoryId === category.id).map((book) => (
+
+                                <div className="book-grid">
+                                    {books.map((book) => (
                                         <div className="book-card" key={book.id}>
                                             <img src={book.image} alt={book.title} style={{ width: 150, height: 150, borderRadius: 10 }} />
                                             <div className="book-info">
                                                 <h4>{book.title}</h4>
                                                 <p>by {book.author}</p>
                                                 <p>Price: {book.price}</p>
+                                                <button className="btn btn-primary card-btn mt-4" style={{ backgroundColor: 'black', color: '#fff'}}>
+                                                    Add to card
+                                                </button>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
-                                <div className="swiper-button-prev">
-                                    <div className="prev-icon">
-                                        <i className="fa-solid fa-chevron-left fa-xl"></i>
-                                    </div>
-                                </div>
+
                             </div>
                         ))}
                     </div>
-                </div>
 
+
+                </div>
 
             </section>
         </Container>
