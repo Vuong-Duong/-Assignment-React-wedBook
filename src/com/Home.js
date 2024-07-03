@@ -1,17 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Carousel, Nav, Container, section } from 'react-bootstrap';
+import { Carousel, Nav, Container } from 'react-bootstrap';
 import '../css/Body.css';
+import { Link } from 'react-router-dom';
+import CustomNavbar from './Navbar';
+import Footer from './Footer';
+
+
 
 export default function Home() {
-    const [books, setBooks] = useState([]);
+    const [booksByCategory, setBooksByCategory] = useState({});
     const [categories, setCategories] = useState([]);
     const [carousel, setCarousel] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:9999/books')
-            .then((res) => {
-                setBooks(res.data);
+            .then((res) => {              
+                const booksByCategoryMap = {};
+                res.data.forEach(book => {
+                    if (!booksByCategoryMap[book.categoryId]) {
+                        booksByCategoryMap[book.categoryId] = [];
+                    }
+                    booksByCategoryMap[book.categoryId].push(book);
+                });
+                setBooksByCategory(booksByCategoryMap);
             })
             .catch((error) => console.log(error));
 
@@ -30,6 +42,8 @@ export default function Home() {
     }, []);
 
     return (
+       <section>
+        <CustomNavbar/>
         <Container>
             <Carousel>
                 {carousel.map(item => (
@@ -61,25 +75,25 @@ export default function Home() {
                     <div className="category-container">
                         {categories.map((category) => (
                             <div className="category-row" key={category.id}>
-                                <div className="d-flex category-info ">
-                                    <p className="card-title-c" style={{ fontSize: 24, fontWeight: 700 }}>
+                                <div className="d-flex category-info">
+                                    <p className="card-title-c m-0" style={{ fontSize: 24, fontWeight: 700 }}>
                                         {category.name}
                                     </p>
-                                    <button className="btn btn-primary card-btn mt-4" style={{ backgroundColor: '#337ab7', color: '#fff', padding: 10, borderRadius: 5 }}>
-                                    View All >>
-                                    </button>
+                                    <Link to="#" className="view-all-link" style={{ color: 'blue' }}>
+                                        View All
+                                    </Link>
                                 </div>
 
                                 <div className="book-grid">
-                                    {books.map((book) => (
+                                    {booksByCategory[category.id] && booksByCategory[category.id].map((book) => (
                                         <div className="book-card" key={book.id}>
                                             <img src={book.image} alt={book.title} style={{ width: 150, height: 150, borderRadius: 10 }} />
                                             <div className="book-info">
                                                 <h4>{book.title}</h4>
                                                 <p>by {book.author}</p>
                                                 <p>Price: {book.price}</p>
-                                                <button className="btn btn-primary card-btn mt-4" style={{ backgroundColor: 'black', color: '#fff'}}>
-                                                    Add to card
+                                                <button className="btn btn-primary card-btn mt-4" style={{ backgroundColor: 'black', color: '#fff' }}>
+                                                    Add to cart
                                                 </button>
                                             </div>
                                         </div>
@@ -89,11 +103,10 @@ export default function Home() {
                             </div>
                         ))}
                     </div>
-
-
                 </div>
-
             </section>
         </Container>
+        <Footer/>
+        </section>
     );
 }

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Import Bootstrap Icons CSS
-import '../css/footer.css'; 
+import '../css/footer.css';
+
 const Footer = () => {
     return (
-        <footer className="text-light bg-dark fixed-bottom">
+        <footer className="footer text-light bg-dark">
             <Container fluid>
                 <Row className='mt-3'>
                     <Col md={3} lg={4} xl={3}>

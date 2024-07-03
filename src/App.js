@@ -1,14 +1,22 @@
 import './App.css';
-import Footer from './com/Footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './com/Home';
-import CustomNavbar from './com/Navbar';
-
+import Login from './com/Login';
+import Register from './com/Register';
 function App() {
   return (
     <div className="App">
-      <CustomNavbar/>
-      <Home/>
-      {/* <Footer/> */}
+
+      <Router>    
+      <div className="content-wrap">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </div>
+     
+    </Router>
     </div>
   );
 }

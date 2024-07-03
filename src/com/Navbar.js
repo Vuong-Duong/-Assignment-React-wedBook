@@ -1,6 +1,8 @@
 import React from 'react';
 import { Navbar, Container, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { Link } from 'react-router-dom';
+
 
 const CustomNavbar = () => {
     return (
@@ -19,7 +21,7 @@ const CustomNavbar = () => {
                         <Nav.Link href="products">Products</Nav.Link>
                         <Nav.Link href="blog">Blog</Nav.Link>
                         <Nav.Link href="my-order">My Order</Nav.Link>
-                        <Nav.Link href="login">Login</Nav.Link>
+                        <Nav.Link as={Link} to={'/login'}>Login</Nav.Link>
                     </Nav>
 
                     <div className="d-flex">

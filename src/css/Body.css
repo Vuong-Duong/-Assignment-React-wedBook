@@ -1,9 +1,10 @@
 .carousel-image {
-    margin-top: 20px;
-    width: 100%;
-    height: 400px; 
-    object-fit: cover; 
+  margin-top: 20px;
+  width: 100%;
+  height: 400px; 
+  object-fit: cover; 
 }
+
 .category-row {
   display: flex;
   flex-direction: column;
@@ -14,25 +15,20 @@
 .category-info {
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Đẩy các phần tử con ra hai bên */
+  width: 100%; /* Đảm bảo phần tử sử dụng hết chiều rộng có sẵn */
   margin-bottom: 10px;
 }
 
-.category-info p {
-  margin-right: 10px;
+.card-title-c {
+  margin: 0; /* Đặt margin về 0 để tránh khoảng trống không cần thiết */
 }
 
-.book-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.view-all-link {
+  color: blue; /* Thiết lập màu cho link */
+  text-decoration: none; /* Loại bỏ gạch chân cho link */
 }
 
-.book-list li {
-  margin: 10px;
-}
 .book-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
