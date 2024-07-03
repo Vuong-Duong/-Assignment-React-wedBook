@@ -1,74 +1,97 @@
-
 import React from 'react';
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBCard,
-  MDBCardBody,
-  MDBCol,
-  MDBRow,
-  MDBInput,
-  MDBCheckbox,
-  MDBIcon
-}
-from 'mdb-react-ui-kit';
-
+import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
+import { FaFacebookF, FaTwitter, FaGoogle, FaGithub } from 'react-icons/fa';
+import '../css/Re.css';
 
 export default function Register() {
   return (
-    <MDBContainer fluid>
+    <Container fluid className="p-5">
+      <div className="p-5 bg-image" style={{ backgroundImage: 'url(https://mdbootstrap.com/img/new/textures/full/171.jpg)', height: '300px' }}></div>
 
-    <div className="p-5 bg-image" style={{backgroundImage: 'url(https://mdbootstrap.com/img/new/textures/full/171.jpg)', height: '300px'}}></div>
+      <Card className='mx-5 mb-5 p-5 shadow-5 card' style={{ marginTop: '-100px', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)' }}>
+        <Card.Body className='p-5 text-center'>
 
-    <MDBCard className='mx-5 mb-5 p-5 shadow-5' style={{marginTop: '-100px', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)'}}>
-      <MDBCardBody className='p-5 text-center'>
+          <h2 className="fw-bold mb-5">Sign up now</h2>
 
-        <h2 className="fw-bold mb-5">Sign up now</h2>
+          <Form>
+            <Row>
+              <Col md='6'>
+                <Form.Group className='mb-4' controlId='formFirstName'>
+                  <Form.Label>First name</Form.Label>
+                  <Form.Control type='text' />
+                </Form.Group>
+              </Col>
 
-        <MDBRow>
-          <MDBCol col='6'>
-            <MDBInput wrapperClass='mb-4' label='First name' id='form1' type='text'/>
-          </MDBCol>
+              <Col md='6'>
+                <Form.Group className='mb-4' controlId='formLastName'>
+                  <Form.Label>Last name</Form.Label>
+                  <Form.Control type='text' />
+                </Form.Group>
+              </Col>
+            </Row>
 
-          <MDBCol col='6'>
-            <MDBInput wrapperClass='mb-4' label='Last name' id='form1' type='text'/>
-          </MDBCol>
-        </MDBRow>
+            <Form.Group className='mb-4' controlId='formEmail'>
+              <Form.Label>Email</Form.Label>
+              <Form.Control type='email' />
+            </Form.Group>
 
-        <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email'/>
-        <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password'/>
+            <Form.Group className='mb-4' controlId='formPassword'>
+              <Form.Label>Password</Form.Label>
+              <Form.Control type='password' />
+            </Form.Group>
 
-        <div className='d-flex justify-content-center mb-4'>
-          <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
-        </div>
+            <Form.Group className='d-flex justify-content-center mb-4' controlId='formNewsletter'>
+              <Form.Check type='checkbox' label='Subscribe to our newsletter' />
+            </Form.Group>
 
-        <MDBBtn className='w-100 mb-4' size='md'>sign up</MDBBtn>
+            <Button className='w-100 mb-4' size='md'>Sign up</Button>
+          </Form>
 
-        <div className="text-center">
+          <div className="text-center social-icons">
+            <p>or sign up with:</p>
 
-          <p>or sign up with:</p>
+            <Button variant='link' className='mx-3' style={{ color: '#1266f1' }}>
+              <FaFacebookF size="1em" />
+            </Button>
 
-          <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
-            <MDBIcon fab icon='facebook-f' size="sm"/>
-          </MDBBtn>
+            <Button variant='link' className='mx-3' style={{ color: '#1266f1' }}>
+              <FaTwitter size="1em" />
+            </Button>
 
-          <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
-            <MDBIcon fab icon='twitter' size="sm"/>
-          </MDBBtn>
+            <Button variant='link' className='mx-3' style={{ color: '#1266f1' }}>
+              <FaGoogle size="1em" />
+            </Button>
 
-          <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
-            <MDBIcon fab icon='google' size="sm"/>
-          </MDBBtn>
+            <Button variant='link' className='mx-3' style={{ color: '#1266f1' }}>
+              <FaGithub size="1em" />
+            </Button>
+          </div>
 
-          <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
-            <MDBIcon fab icon='github' size="sm"/>
-          </MDBBtn>
+        </Card.Body>
+      </Card>
 
-        </div>
-
-      </MDBCardBody>
-    </MDBCard>
-
-  </MDBContainer>
-);
+      {/* Footer */}
+      <div className="fixed-bottom-custom bg-primary text-white py-4 px-4 px-xl-5">
+        <Container className="d-md-flex justify-content-between align-items-center">
+          <div className="text-center text-md-start mb-3 mb-md-0">
+            &copy; 2020. All rights reserved.
+          </div>
+          <div className="text-center text-md-end">
+            <Button variant='link' className='mx-3' style={{ color: 'white' }}>
+              <FaFacebookF size="1em" />
+            </Button>
+            <Button variant='link' className='mx-3' style={{ color: 'white' }}>
+              <FaTwitter size="1em" />
+            </Button>
+            <Button variant='link' className='mx-3' style={{ color: 'white' }}>
+              <FaGoogle size="1em" />
+            </Button>
+            <Button variant='link' className='mx-3' style={{ color: 'white' }}>
+              <FaGithub size="1em" />
+            </Button>
+          </div>
+        </Container>
+      </div>
+    </Container>
+  );
 }

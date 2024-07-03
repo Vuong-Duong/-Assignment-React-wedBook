@@ -44,8 +44,7 @@ export default function Home() {
     return (
        <section>
         <CustomNavbar/>
-        <Container>
-            <Carousel>
+        <Carousel>
                 {carousel.map(item => (
                     <Carousel.Item key={item.id}>
                         <img
@@ -59,7 +58,8 @@ export default function Home() {
                     </Carousel.Item>
                 ))}
             </Carousel>
-
+        <Container>
+            
             <Nav className="justify-content-center mt-5">
                 {categories.map((c) => (
                     <Nav.Item key={c.id}>
