@@ -61,14 +61,13 @@ export default function Register() {
         ? Math.max(...users.map((user) => parseInt(user.id))) + 1
         : 1;
 
-    axios
-      .post("http://localhost:9999/users", {
+    axios.post("http://localhost:9999/users", {
         id: newId.toString(),
         ...formRegister,
       })
       .then((response) => {
         console.log("User registered successfully:", response.data);
-        navigate("/"); 
+        navigate("/login"); 
       })
       .catch((error) => console.error("Registration failed:", error));
   };

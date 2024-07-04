@@ -123,14 +123,7 @@
       "password": "password1",
       "role": "2"
     },
-    {
-      "id": "2",
-      "number": "0961586588",
-      "username": "duongvdhe173014@gmail.com",
-      "email": "duongvdhe173014@gmail.com",
-      "password": "password2",
-      "role": "1"
-    },
+  
     {
       "id": "3",
       "number": "0961586588",
@@ -144,7 +137,7 @@
       "number": "0961591555",
       "username": "duong",
       "email": "duongvdhe173014@gmail.com",
-      "password": "đuonguong"
+      "password": "duonguong"
     }
   ]
 }
