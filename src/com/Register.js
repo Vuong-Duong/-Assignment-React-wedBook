@@ -1,9 +1,78 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import { FaFacebookF, FaTwitter, FaGoogle, FaGithub } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom";
 import '../css/Re.css';
 
 export default function Register() {
+  const regexNumber = /^[0-9]*$/;
+  const regexUsername = /^\S+$/;
+  const [users, setUsers] = useState([]);
+  const [errors, setErrors] = useState({});
+  const [formRegister, setFormRegister] = useState({
+    number: "",
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:9999/users")
+      .then((response) => setUsers(response.data))
+      .catch((error) => console.error(error));
+  }, []);
+
+  const validateForm = () => {
+    const errors = {};
+
+    if (!regexNumber.test(formRegister.number)) errors.number = "Number must be numeric.";
+    if (!regexUsername.test(formRegister.username)) errors.username = "Username cannot contain spaces.";
+
+    return errors;
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormRegister({
+      ...formRegister,
+      [name]: value,
+    });
+    setErrors({
+      ...errors,
+      [name]: "", // Clear error message when input changes
+    });
+  };
+
+  const navigate = useNavigate(); // Hook to navigate programmatically
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const errors = validateForm();
+    if (Object.keys(errors).length > 0) {
+      setErrors(errors);
+      alert("Please enter the form fields correctly.");
+      return;
+    }
+
+    const newId =
+      users.length > 0
+        ? Math.max(...users.map((user) => parseInt(user.id))) + 1
+        : 1;
+
+    axios
+      .post("http://localhost:9999/users", {
+        id: newId.toString(),
+        ...formRegister,
+      })
+      .then((response) => {
+        console.log("User registered successfully:", response.data);
+        navigate("/"); 
+      })
+      .catch((error) => console.error("Registration failed:", error));
+  };
+
   return (
     <Container fluid className="p-5">
       <div className="p-5 bg-image" style={{ backgroundImage: 'url(https://mdbootstrap.com/img/new/textures/full/171.jpg)', height: '300px' }}></div>
@@ -13,38 +82,68 @@ export default function Register() {
 
           <h2 className="fw-bold mb-5">Sign up now</h2>
 
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Row>
               <Col md='6'>
-                <Form.Group className='mb-4' controlId='formFirstName'>
-                  <Form.Label>First name</Form.Label>
-                  <Form.Control type='text' />
+                <Form.Group className='mb-4' controlId='formUsername'>
+                  <Form.Label>Username</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="username"
+                    value={formRegister.username}
+                    onChange={handleInputChange}
+                    isInvalid={!!errors.username}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.username}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Col>
 
               <Col md='6'>
-                <Form.Group className='mb-4' controlId='formLastName'>
-                  <Form.Label>Last name</Form.Label>
-                  <Form.Control type='text' />
+                <Form.Group className='mb-4' controlId='formNumber'>
+                  <Form.Label>Number</Form.Label>
+                  <Form.Control
+                    type='text'
+                    name='number'
+                    value={formRegister.number}
+                    onChange={handleInputChange}
+                    isInvalid={!!errors.number}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.number}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Col>
             </Row>
 
             <Form.Group className='mb-4' controlId='formEmail'>
               <Form.Label>Email</Form.Label>
-              <Form.Control type='email' />
+              <Form.Control
+                type='email'
+                name='email'
+                value={formRegister.email}
+                onChange={handleInputChange}
+              />
             </Form.Group>
 
             <Form.Group className='mb-4' controlId='formPassword'>
               <Form.Label>Password</Form.Label>
-              <Form.Control type='password' />
+              <Form.Control
+                type='password'
+                name='password'
+                value={formRegister.password}
+                onChange={handleInputChange}
+              />
             </Form.Group>
 
             <Form.Group className='d-flex justify-content-center mb-4' controlId='formNewsletter'>
               <Form.Check type='checkbox' label='Subscribe to our newsletter' />
             </Form.Group>
 
-            <Button className='w-100 mb-4' size='md'>Sign up</Button>
+            <Button className='w-100 mb-4' size='md' type='submit'>
+              Sign up
+            </Button>
           </Form>
 
           <div className="text-center social-icons">
