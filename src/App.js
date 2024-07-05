@@ -4,7 +4,7 @@ import Home from './com/Home';
 import Login from './com/Login';
 import Register from './com/Register';
 import Profile from './com/Profile';
-
+import Admin from './com/Admin';
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </div>
      

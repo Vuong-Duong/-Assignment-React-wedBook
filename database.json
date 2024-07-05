@@ -119,6 +119,7 @@
     {
       "id": "1",
       "number": "0961586589",
+      "username": "user1",
       "email": "duongvdhe173014@gmail.com",
       "password": "password1",
       "role": "2"
@@ -137,7 +138,8 @@
       "number": "0961591555",
       "username": "duong",
       "email": "duongvdhe173014@gmail.com",
-      "password": "duonguong"
+      "password": "duonguong",
+      "role": "1"
     }
   ]
 }

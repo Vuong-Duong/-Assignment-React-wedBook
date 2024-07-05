@@ -15,6 +15,7 @@ export default function Register() {
     username: "",
     email: "",
     password: "",
+    role: "1",
   });
 
   useEffect(() => {

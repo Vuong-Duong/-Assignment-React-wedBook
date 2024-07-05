@@ -29,16 +29,23 @@ export default function Login() {
     setError('');
   };
 
-  const handleLogin = () => {
+  const handleLogin = (event) => {
+    event.preventDefault();
     const user = users.find(user => user.username === username && user.password === password);
-
+  
     if (user) {
       // Lưu thông tin người dùng vào session
       sessionStorage.setItem('userId', user.id);
       sessionStorage.setItem('username', user.username);
       sessionStorage.setItem('role', user.role);
+  
       // Chuyển hướng sau khi đăng nhập thành công
-      navigate('/');
+      const role = parseInt(user.role, 10); 
+      if (role === 1) {
+        navigate('/');
+      } else if (role === 2) {
+        navigate('/admin');
+      }
     } else {
       setError('Invalid username or password');
     }
