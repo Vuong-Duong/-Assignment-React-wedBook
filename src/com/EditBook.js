@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
-import { Form, Button, Container } from 'react-bootstrap';
+import { useParams, useNavigate,Link } from 'react-router-dom';
+import { Form, Button, Container,Row } from 'react-bootstrap';
+import SidebarAdmin from './SidebarAdmin';
+import '../css/EditBook.css'; 
 
 const EditBook = () => {
   const { id } = useParams();
@@ -23,14 +25,15 @@ const EditBook = () => {
     e.preventDefault();
     axios.put(`http://localhost:9999/books/${id}`, book)
       .then(() => {
-        
         navigate('/admin');
       })
       .catch(error => console.log(error));
   };
 
   return (
-    <Container>
+    
+    <Container className="edit-book-container">
+         <SidebarAdmin  />
       <h2>Edit Book</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
@@ -78,11 +81,13 @@ const EditBook = () => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Button variant="primary" type="submit">Save Changes</Button>
+        <Row style={{marginTop:'30px'}}>
+        <Button variant="primary" type="submit" style={{marginLeft:'15px'}}>Save Changes</Button>
+        <Link to={'/Admin'}><Button variant="secondary" style={{marginLeft:'295px'}}>Close</Button></Link>
+        </Row>
       </Form>
     </Container>
   );
 };
 
 export default EditBook;
-

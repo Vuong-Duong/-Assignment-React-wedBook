@@ -31,7 +31,7 @@ const CustomNavbar = () => {
     return (
         <Navbar bg="dark" variant="dark" expand="md">
             <Container fluid>
-                <Navbar.Brand href="home">Shop</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/">Shop</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-nav" />
                 <Navbar.Collapse id="navbar-nav">
                     <Form className="d-flex mx-5 w-50" action="search" method="post">

@@ -15,7 +15,7 @@ export default function Home() {
 
     useEffect(() => {
         axios.get('http://localhost:9999/books')
-            .then((res) => {              
+            .then((res) => {
                 const booksByCategoryMap = {};
                 res.data.forEach(book => {
                     if (!booksByCategoryMap[book.categoryId]) {
@@ -42,9 +42,9 @@ export default function Home() {
     }, []);
 
     return (
-       <section>
-        <CustomNavbar/>
-        <Carousel>
+        <section>
+            <CustomNavbar />
+            <Carousel>
                 {carousel.map(item => (
                     <Carousel.Item key={item.id}>
                         <img
@@ -58,55 +58,57 @@ export default function Home() {
                     </Carousel.Item>
                 ))}
             </Carousel>
-        <Container>
-            
-            <Nav className="justify-content-center mt-5">
-                {categories.map((c) => (
-                    <Nav.Item key={c.id}>
-                        <Nav.Link href={`category?categoryId=${c.id}`}>
-                            <h5 className='text-dark'>{c.name}</h5>
-                        </Nav.Link>
-                    </Nav.Item>
-                ))}
-            </Nav>
+            <Container>
 
-            <section className="products">
-                <div className="electronic-products">
-                    <div className="category-container">
-                        {categories.map((category) => (
-                            <div className="category-row" key={category.id}>
-                                <div className="d-flex category-info">
-                                    <p className="card-title-c m-0" style={{ fontSize: 24, fontWeight: 700 }}>
-                                        {category.name}
-                                    </p>
-                                    <Link to="#" className="view-all-link" style={{ color: 'blue' }}>
-                                        View All
-                                    </Link>
-                                </div>
+                <Nav className="justify-content-center mt-5">
+                    {categories.map((c) => (
+                        <Nav.Item key={c.id}>
+                            <Nav.Link href={`category?categoryId=${c.id}`}>
+                                <h5 className='text-dark'>{c.name}</h5>
+                            </Nav.Link>
+                        </Nav.Item>
+                    ))}
+                </Nav>
 
-                                <div className="book-grid">
-                                    {booksByCategory[category.id] && booksByCategory[category.id].map((book) => (
-                                        <div className="book-card" key={book.id}>
-                                            <img src={book.image} alt={book.title} style={{ width: 150, height: 150, borderRadius: 10 }} />
-                                            <div className="book-info">
-                                                <h4>{book.title}</h4>
-                                                <p>by {book.author}</p>
-                                                <p>Price: {book.price}</p>
-                                                <button className="btn btn-primary card-btn mt-4" style={{ backgroundColor: 'black', color: '#fff' }}>
-                                                    Add to cart
-                                                </button>
+                <section className="products">
+                    <div className="electronic-products">
+                        <div className="category-container">
+                            {categories.map((category) => (
+                                <div className="category-row" key={category.id}>
+                                    <div className="d-flex category-info">
+                                        <p className="card-title-c m-0" style={{ fontSize: 24, fontWeight: 700 }}>
+                                            {category.name}
+                                        </p>
+                                        <Link to="#" className="view-all-link" style={{ color: 'blue' }}>
+                                            View All
+                                        </Link>
+                                    </div>
+
+                                    <div className="book-grid">
+                                        {booksByCategory[category.id] && booksByCategory[category.id].map((book) => (
+                                            <div className="book-card" key={book.id}>
+                                                <img src={book.image} alt={book.title} style={{ width: 150, height: 150, borderRadius: 10 }} />
+                                                <div className="book-info">
+                                                    <Link to={`/Detail/${book.id}`} className="link-style">
+                                                        <h4>{book.title}</h4>
+                                                    </Link>
+                                                    <p>by {book.author}</p>
+                                                    <p>Price: {book.price}</p>
+                                                    <button className="btn btn-primary card-btn mt-4" style={{ backgroundColor: 'black', color: '#fff' }}>
+                                                        Add to cart
+                                                    </button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
-                                </div>
+                                        ))}
+                                    </div>
 
-                            </div>
-                        ))}
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
-        </Container>
-        <Footer/>
+                </section>
+            </Container>
+            <Footer />
         </section>
     );
 }

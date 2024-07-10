@@ -6,6 +6,7 @@ import Register from './com/Register';
 import Profile from './com/Profile';
 import Admin from './com/Admin';
 import EditBook from './com/EditBook';
+import Detail from './com/Detail';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/edit-book/:id" element={<EditBook />} />
+            <Route path="/Detail/:id" element={<Detail />} />
           </Routes>
         </div>
      

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
@@ -52,12 +53,13 @@ export default function Login() {
   };
 
   return (
+    
     <MDBContainer fluid className="p-0">
+     <Link to={'/'}> <Button variant='success' style={{ marginRight:'80%',color: 'white', marginTop:'15px' }}>Back To Home</Button></Link>
       <MDBRow className="justify-content-center align-items-center">
         <MDBCol md='6' className='p-0'>
           <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" className="img-fluid" alt="Sample image" />
         </MDBCol>
-
         <MDBCol md='6' className='p-5'>
           <div className="d-flex flex-row align-items-center justify-content-center mb-4">
             <p className="lead fw-normal mb-0 me-3">Sign in with</p>

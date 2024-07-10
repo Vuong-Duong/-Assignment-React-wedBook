@@ -85,3 +85,7 @@
 .book-info button:hover {
   background-color: #333;
 }
+.link-style {
+  text-decoration: none; /* Loại bỏ gạch chân */
+  color: black; /* Màu chữ đen */
+}

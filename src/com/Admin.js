@@ -49,6 +49,7 @@ const Admin = () => {
   };
 
   return (
+    
     <div className={`home-section ${sidebarOpen ? 'shifted' : ''}`}>
       <SidebarAdmin sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <Container fluid className={`${sidebarOpen ? 'content-open' : 'content-closed'}`}>

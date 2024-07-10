@@ -1,0 +1,35 @@
+/* Add styles for book card */
+.book-card {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Ensure the card contents don't overflow */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+  }
+  
+  .book-card:hover {
+    transform: scale(0.95); /* Scale down the card on hover */
+  }
+  
+  /* Add styles for book image */
+  .book-image {
+    width: 500px;
+    height: 400px;
+    object-fit: cover; /* Ensure the image covers the entire card */
+  }
+  
+  /* Add styles for card body */
+  .card-body {
+    padding: 10px;
+  }
+  
+  .card-body h4 {
+    margin-top: 10px;
+  }
+  
+  .card-body p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  
