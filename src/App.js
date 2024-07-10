@@ -5,6 +5,7 @@ import Login from './com/Login';
 import Register from './com/Register';
 import Profile from './com/Profile';
 import Admin from './com/Admin';
+import EditBook from './com/EditBook';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/edit-book/:id" element={<EditBook />} />
           </Routes>
         </div>
      

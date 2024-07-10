@@ -51,7 +51,7 @@
     {
       "id": "7",
       "title": "The Hobbit",
-      "author": "J.K. Rowling",
+      "author": "J.R.R. Tolkien",
       "categoryId": 3,
       "price": 21.5,
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546071216l/5907.jpg"
@@ -59,7 +59,7 @@
     {
       "id": "8",
       "title": "Brave New World",
-      "author": "George Orwell",
+      "author": "Aldous Huxley",
       "categoryId": 1,
       "price": 19.5,
       "image": "https://m.media-amazon.com/images/I/914u+JexlCL._AC_UF894,1000_QL80_.jpg"
@@ -75,10 +75,50 @@
     {
       "id": "10",
       "title": "The Lord of the Rings",
-      "author": "J.K. Rowling",
+      "author": "J.R.R. Tolkien",
       "categoryId": 3,
       "price": 29.99,
       "image": "https://m.media-amazon.com/images/I/71VjmMcE-rL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+      "id": "11",
+      "title": "Foundation",
+      "author": "Isaac Asimov",
+      "categoryId": 1,
+      "price": 23.5,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51d4G0sFMzL.jpg"
+    },
+    {
+      "id": "12",
+      "title": "Neuromancer",
+      "author": "William Gibson",
+      "categoryId": 1,
+      "price": 22,
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Neuromancer_TGN.jpg/220px-Neuromancer_TGN.jpg"
+    },
+    {
+      "id": "13",
+      "title": "Frankenstein",
+      "author": "Mary Shelley",
+      "categoryId": 2,
+      "price": 14.99,
+      "image": "https://m.media-amazon.com/images/I/81TVqiv-ctL._AC_UF1000,1000_QL80_.jpg"
+    },    
+    {
+      "id": "14",
+      "title": "The Silmarillion",
+      "author": "J.R.R. Tolkien",
+      "categoryId": 3,
+      "price": 25.99,
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1610045590i/7332.jpg"
+    },
+    {
+      "id": "15",
+      "title": "The Name of the Wind",
+      "author": "Patrick Rothfuss",
+      "categoryId": 3,
+      "price": 24.99,
+      "image": "https://grimoakpress.com/cdn/shop/files/cover-notw-fc.jpg"
     }
   ],
   "categories": [
@@ -101,7 +141,7 @@
   "carousel": [
     {
       "id": "1",
-      "image": "https://farm3.staticflickr.com/2919/32726853103_ac1707e094_z.jpg",
+      "image": "https://static.independent.co.uk/2024/03/07/17/Dune.png",
       "title": "Dune"
     },
     {
@@ -124,7 +164,6 @@
       "password": "password1",
       "role": "2"
     },
-  
     {
       "id": "3",
       "number": "0961586588",
