@@ -3,25 +3,26 @@ import axios from 'axios';
 import { Container, Table, Form, Col, Row, Button } from 'react-bootstrap';
 import SidebarAdmin from './SidebarAdmin';
 import { Link } from 'react-router-dom';
-import '../css/Admin.css'; 
+import '../css/Admin.css';
 
 const Admin = () => {
   const [books, setBooks] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
-    fetchData(); 
+    fetchData();
   }, []);
 
   useEffect(() => {
     const handleResize = () => {
-      const isSidebarOpen = window.innerWidth > 1100; 
+      const isSidebarOpen = window.innerWidth > 1100;
       setSidebarOpen(isSidebarOpen);
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize(); 
+    handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -32,24 +33,33 @@ const Admin = () => {
         setBooks(res.data);
       })
       .catch((error) => console.log(error));
+
+    axios.get('http://localhost:9999/categories')
+      .then((res) => {
+        setCategories(res.data);
+      })
+      .catch((error) => console.log(error));
   };
 
   const handleSearch = (e) => {
     e.preventDefault();
-    
+    // Handle search logic
   };
 
   const handleDelete = (id) => {
     axios.delete(`http://localhost:9999/books/${id}`)
       .then(() => {
-        
-        fetchData();
+        fetchData(); // Refresh books after delete
       })
       .catch((error) => console.log(error));
   };
 
+  const loadFull = books.map(book => {
+    const category = categories.find(cat => cat.id == book.categoryId);
+    return { ...book, categoryName: category ? category.name : "Unknown Category" };
+  });
+
   return (
-    
     <div className={`home-section ${sidebarOpen ? 'shifted' : ''}`}>
       <SidebarAdmin sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <Container fluid className={`${sidebarOpen ? 'content-open' : 'content-closed'}`}>
@@ -65,7 +75,6 @@ const Admin = () => {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="search-input"
-                    
                   />
                 </Form.Group>
               </Form>
@@ -84,7 +93,7 @@ const Admin = () => {
                 </tr>
               </thead>
               <tbody>
-                {books.filter(book => book.title.toLowerCase().startsWith(searchTerm.toLowerCase()))
+                {loadFull.filter(book => book.title.toLowerCase().startsWith(searchTerm.toLowerCase()))
                   .map(book => (
                     <tr key={book.id}>
                       <td>{book.id}</td>
@@ -94,11 +103,13 @@ const Admin = () => {
                         <img src={book.image} alt={book.title} style={{ width: '50px', height: '50px', borderRadius: '5px' }} />
                       </td>
                       <td>{book.price}</td>
-                      <td>{book.categoryId}</td>
+                      <td>{book.categoryName}</td> {/* Display categoryName instead of categoryId */}
                       <td><Button variant='danger' onClick={() => handleDelete(book.id)}>Delete</Button></td>
-                      <td>  <Link to={`/edit-book/${book.id}`}>
+                      <td>
+                        <Link to={`/edit-book/${book.id}`}>
                           <Button variant='success' style={{ color: 'white' }}>Edit</Button>
-                        </Link></td>
+                        </Link>
+                      </td>
                     </tr>
                   ))}
               </tbody>

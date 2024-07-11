@@ -9,8 +9,7 @@ const CustomNavbar = () => {
     const navigate = useNavigate();
     const [users,setUsers] = useState([]);
 
-    useEffect(() => {
-        // Kiểm tra sessionStorage để xác định trạng thái đăng nhập
+    useEffect(() => {      
         const username = sessionStorage.getItem('username');
         if (username) {
             setIsLoggedIn(true);

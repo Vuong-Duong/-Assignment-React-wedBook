@@ -9,6 +9,7 @@ import '../css/Detail.css';
 const Detail = () => {
   const { id } = useParams();
   const [book, setBook] = useState(null);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     fetchBookDetails();
@@ -23,6 +24,15 @@ const Detail = () => {
     }
   };
 
+  useEffect(() => {
+    axios.get('http://localhost:9999/categories')
+      .then((res) => {
+        setCategories(res.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+
   if (!book) {
     return (
       <section>
@@ -34,6 +44,9 @@ const Detail = () => {
       </section>
     );
   }
+
+  const category = categories.find(cat => cat.id == book.categoryId);
+  const categoryName = category ? category.name : "Unknown Category";
 
   return (
     <section>
@@ -53,7 +66,7 @@ const Detail = () => {
               <div className="details">
                 <h2>Details</h2>
                 <p >Lorem ipsum dolor sit amet</p>
-                <p>Category: {book.categoryId}</p>
+                <p>Category: {categoryName}</p> 
               </div>
               <Button variant="primary" onClick={() => alert('Add to cart')} style={{marginTop:'20%', width:'300px',height:'50px'}} >Add to Cart</Button>
             </Card.Body>

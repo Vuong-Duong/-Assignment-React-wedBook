@@ -89,7 +89,7 @@ export default function Home() {
                                             <div className="book-card" key={book.id}>
                                                 <img src={book.image} alt={book.title} style={{ width: 150, height: 150, borderRadius: 10 }} />
                                                 <div className="book-info">
-                                                    <Link to={`/Detail/${book.id}`} className="link-style">
+                                                    <Link to={`/Detail/${book.id}/${category.id}`} className="link-style">
                                                         <h4>{book.title}</h4>
                                                     </Link>
                                                     <p>by {book.author}</p>
