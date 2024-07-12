@@ -40,7 +40,7 @@ const CustomNavbar = () => {
                         </Button>
                     </Form>
                     <Nav className="mr-auto" style={{ marginLeft: '10%' }}>
-                        <Nav.Link href="products">Products</Nav.Link>
+                        <Nav.Link as={Link} to="/bookList">Products</Nav.Link>
                         <Nav.Link href="blog">Blog</Nav.Link>
                         <Nav.Link href="my-order">My Order</Nav.Link>
                         {isLoggedIn ? (

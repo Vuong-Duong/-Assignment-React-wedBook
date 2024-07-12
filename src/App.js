@@ -7,6 +7,7 @@ import Profile from './com/Profile';
 import Admin from './com/Admin';
 import EditBook from './com/EditBook';
 import Detail from './com/Detail';
+import BookList from './com/BookList';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/admin" element={<Admin />} />
             <Route path="/edit-book/:id" element={<EditBook />} />
             <Route path="/Detail/:id/:cid" element={<Detail />} />
+            <Route path="/bookList" element={<BookList/>} />
           </Routes>
         </div>
      
